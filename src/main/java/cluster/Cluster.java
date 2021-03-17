@@ -88,7 +88,7 @@ public final class Cluster {
 	 */
 	private static Point biggestLeastDistance(List<Point> points,List<Point> centers){
 		return points.parallelStream()
-			.reduce((p1,p2)->minDistance(p1,centers)>minDistance(p1,centers)?p1:p2)
+			.reduce((p1,p2)->minDistance(p1,centers)>minDistance(p2,centers)?p1:p2)
 			.get();
 	}
 	/**
